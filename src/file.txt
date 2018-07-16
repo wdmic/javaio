@@ -1,0 +1,17 @@
+java.io.File类用于表示文件（目录）
+File类只用于表示文件（目录）的信息（名称、大小等），不能用于文件内容的访问
+
+RandomAccessFile java提供对文件内容的访问 可以读文件也可写文件
+RandomAccessFile 可以随机访问文件，即可以访问文件的任意位置
+
+java文件模型
+	在硬盘上的文件是byte byte byte存储的，是数据的集合
+打开文件
+	有两种模式：rw(读写)和r(只读)
+	RandomAccessFile raf = new RandomAccessFile(file, "rw");
+	含有一个文件指针， 打开文件时指针在开头 pointer=0
+写入方法
+	raf.write(int)  只写一个字节（后8位），同时指针指向下一个字节位置，准备再次写入
+读方法
+	int b = raf.read()   读取一个字节
+文件读写完成后一定要关闭
